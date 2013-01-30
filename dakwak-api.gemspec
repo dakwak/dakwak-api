@@ -20,6 +20,8 @@ Gem::Specification.new do |gem|
 
 
   gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'multi_json'
+  gem.add_runtime_dependency 'multi_json'
   gem.add_development_dependency 'httparty'
   gem.add_runtime_dependency 'httparty'
   gem.add_development_dependency 'test-unit'
