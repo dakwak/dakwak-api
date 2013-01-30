@@ -60,7 +60,7 @@ This says: get me the translation of hola in Arabic, and it will return a hash o
 {"apikey"=>"1234567890abcdef", "lang"=>"ar", "phrase"=>"hola", "translation"=>"مرحبا"}
 ```
 
-Note: If the phrase has not been translated before, you will get an error. In that case, you can use the translate() method to translate that phrase. (more details below)
+Note: If the phrase has not been translated before, you will get an error. In that case, you can use the translate() method to translate that phrase.
 
 ### translate
 ```ruby
