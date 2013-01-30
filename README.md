@@ -25,9 +25,9 @@ Or install it yourself as:
 ## Usage
 To start, create a wrapper and pass in your website's API key:
 
-````ruby
-wrapper = Dakwak::Api::Wrapper.new((APIKEY)
-````
+```ruby
+wrapper = Dakwak::Api::Wrapper.new(APIKEY)
+```
 
 If you don't know your website's API key:
 - Login to [dakwak](https://dakwak.com)
@@ -39,9 +39,9 @@ An email will be sent to the support staff at dakwak and they will contact you w
 
 Next, you can use any of these methods on your wrapper object
 ### get_translation
-````ruby
+```ruby
 wrapper.get_translation(phrase, lang)
-````
+```
 
 Returns the translation of a given phrase in the given language:
 
@@ -50,22 +50,22 @@ Returns the translation of a given phrase in the given language:
 - If no unpublished translation was found, return an empty string
 Example
 
-````ruby
+```ruby
 wrapper.get_translation("hola", "ar")
-````
+```
 
 This says: get me the translation of hola in Arabic, and it will return a hash of the following:
 
-````ruby
+```ruby
 {"apikey"=>"1234567890abcdef", "lang"=>"ar", "phrase"=>"hola", "translation"=>"مرحبا"}
-````
+```
 
 Note: If the phrase has not been translated before, you will get an error. In that case, you can use the translate() method to translate that phrase. (more details below)
 
 ### translate
-````ruby
+```ruby
 wrapper.translate(phrase, lang, callback_url="")
-````
+```
 
 Returns the translation of given phrases in the given language. If no translation was available for a certain phrase, it will do the following:
 - If you provided a callback URL, it will translate the phrase & send the translation in a POST request to the callback URL
@@ -73,9 +73,9 @@ Returns the translation of given phrases in the given language. If no translatio
 
 Example
 
-````ruby
+```ruby
 wrapper.translate(["hello", "welcome"], "ar")
-````
+```
 
 This says: get me the translation of 'hello' and 'welcome' in Arabic, and it will return a hash of the following:
 ````ruby
@@ -83,37 +83,37 @@ This says: get me the translation of 'hello' and 'welcome' in Arabic, and it wil
 ````
 
 ### search
-````ruby
+```ruby
 wrapper.search(phrase, lang)
-````
+```
 
 Returns the phrases that match your query in the translated and the original versions of your website, along with the pages where these phrases were found.
 
 Example
 
-````ruby
+```ruby
 wrapper.search("hola", "es")
-````
+```
 
 This says: search through my Spanish website and original website for 'hola', and return URLs of pages where this phrase was found.
 
-````ruby
+```ruby
 {"apikey"=>"1234567890abcdef", "lang"=>"ar", "phrase"=>"welcome", 
 "results"=>[{"source_text": "hello world","translated_text": "hola mundo","page_urls": ["/page1", "/page2"]}, {"source_text": "hi","translated_text": "hola","page_urls": ["/page3", "/page4"]}]
-````
+```
 
 ### index_pages
-````ruby
+```ruby
 wrapper.index_pages(pages)
-````
+```
 
 This method basically indexes the pages you request. By indexing, we mean send a GET request to that page & therefor translating it.
 
 Example
 
-````ruby
-wrapper.index_pages("hola", "es")
-````
+```ruby
+wrapper.index_pages(["/page1", "/page2"])
+```
 
 Note: Indexing will happen as a background job, so it will not show any error messages if the indexing fails (returns 404, etc) 
 
@@ -123,7 +123,7 @@ Note: Indexing will happen as a background job, so it will not show any error me
 - the "lang" field of the method accepts the shortcut version of the language. Here they are:
 
 ## Valid values for 'lang' field
-<table border="1" cellpadding="2">
+<table border="1">
 <thead>
 <tr>
 <td width="140">Language</td>
