@@ -22,7 +22,7 @@ class WrapperTest < Test::Unit::TestCase
   def test_get_translation_must_return_error_when_phrase_does_not_exist
     wrapper = Dakwak::Api::Wrapper.new(APIKEY) 
     #phrases that is unlikely to be in the db
-    assert({"error"=>"phrase was not found in the database"}.eql?(wrapper.get_translation("shooot", "es")))
+    assert({"error"=>"phrase was not found"}.eql?(wrapper.get_translation("shooot", "es")))
   end
 
 end
