@@ -98,8 +98,10 @@ wrapper.search("hola", "es")
 This says: search through my Spanish website and original website for 'hola', and return URLs of pages where this phrase was found.
 
 ```ruby
-{"apikey"=>"1234567890abcdef", "lang"=>"ar", "phrase"=>"welcome", 
-"results"=>[{"source_text": "hello world","translated_text": "hola mundo","page_urls": ["/page1", "/page2"]}, {"source_text": "hi","translated_text": "hola","page_urls": ["/page3", "/page4"]}]
+{"apikey"=>"1234567890abcdef", "lang"=>"ar", "phrase"=>"welcome", "results"=>[
+  {"source_text": "hello world","translated_text": "hola mundo","page_urls": ["/page1", "/page2"]}, 
+  {"source_text": "hi","translated_text": "hola","page_urls": ["/page3", "/page4"]
+}]
 ```
 
 ### index_pages
@@ -120,7 +122,7 @@ Note: Indexing will happen as a background job, so it will not show any error me
 
 ### Notes:
 - These methods assumes you have translated your website to the language of the phrase and the language requested. Otherwise you will get an error.
-- the "lang" field of the method accepts the shortcut version of the language. Here they are:
+- the "lang" field of these methods accepts the shortcut version of the language, which are:
 
 ## Valid values for 'lang' field
 <table border="1">
