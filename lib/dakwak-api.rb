@@ -6,8 +6,7 @@ module Dakwak
   module Api
     class Wrapper
       include HTTParty
-      # base_uri 'https://dakwak.com/api'
-      base_uri 'http://localhost:3000/api'
+      base_uri 'https://dakwak.com/api'
 
       def initialize(apikey)
         raise ArgumentError, "apikey must be a non-empty string" unless is_non_empty_string(apikey)
