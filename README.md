@@ -91,7 +91,7 @@ This says: get me the translation of 'hello' and 'welcome' in Arabic, and it wil
 wrapper.create_translator(email,username,password,grant_admin)
 ```
 
-Returns the json of given data, it will do the following:
+returns the created translator in json format, it will do the following:
 - If no username or password was provided, it will still create translator with a generated name and password
 - if you pass grant_admin 0 then it will not grant translator admin privileges, if you pass 1 then it will grant translator admin privileges
 
