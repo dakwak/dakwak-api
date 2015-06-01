@@ -35,6 +35,12 @@ module Dakwak
         return MultiJson.load(self.class.post(url).body)
       end
 
+      def create_translator(email, username="", password="",grant_admin="")
+        raise ArgumentError, "email must be a non-empty string" unless is_non_empty_string(email)
+        url = "/create_translator.json?apikey=#{@apikey}&email=#{email}&username=#{username}&password=#{password}&grant_admin=#{grant_admin}"
+        return MultiJson.load(self.class.post(url).body)
+      end
+
       def index_pages(pages)
         raise ArgumentError, "pages must be a non-empty array" unless is_non_empty_array(pages)
         url = "/index_pages.json?apikey=#{@apikey}"

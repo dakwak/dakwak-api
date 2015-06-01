@@ -86,6 +86,25 @@ This says: get me the translation of 'hello' and 'welcome' in Arabic, and it wil
 ````ruby
 {"apikey"=>"1234567890abcdef", "lang"=>"ar", "translation"=>{"hello"=>"مرحبا", "welcome"=>"ترحيب"}}
 ````
+### create_translator
+```ruby
+wrapper.create_translator(email,username,password,grant_admin)
+```
+
+Returns the json of given data, it will do the following:
+- If no username or password was provided, it will still create translator with a generated name and password
+- if you pass grant_admin 0 then it will not grant translator admin privileges, if you pass 1 then it will grant translator admin privileges
+
+Example
+
+```ruby
+wrapper.create_translator("example@example.com","example","password_example",1)
+```
+
+This says: create me a translator with email 'example@example.com' , username 'example',password 'password_example' and '1' to grant translator admin privileges, it will return a hash of the following:
+````ruby
+{"apikey"=>"1234567890abcdef", "email"=>"example@example.com", "username"=>"example",password=>"password_example"}
+````
 
 ### search
 ```ruby
